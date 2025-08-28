@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../sass/variables.scss";
+
+.footer {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .footerContainer {
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        padding: 30px;
+        font-size: 16px;
+        font-weight: 300;
+        color: variables.$second-blue;
+
+        .footerList {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+}

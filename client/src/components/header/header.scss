@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "../../sass/config.scss";
+@use "../../sass/variables.scss";
+@use "../../sass/responsive.scss";
+
+
+.header {
+    background-color: rgb(1, 1, 58);
+    display: flex;
+    justify-content: center;
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+}

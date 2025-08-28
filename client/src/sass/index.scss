@@ -1,0 +1,31 @@
+@import "./reset.scss";
+@import "./responsive.scss";
+@import "./variables.scss";
+
+@font-face {
+    src: url("../../public/fonts/Inter-Medium.ttf");
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-display: swap;
+}
+
+@font-face {
+    src: url("../../public/fonts/PlayfairDisplay-Black.ttf");
+    font-weight: 500;
+    font-family: "Playfair", sans-serif;
+    font-display: swap;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    width: 100vw;
+    background-color: #e6e6ff;
+
+}
+
