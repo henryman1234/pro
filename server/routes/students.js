@@ -13,7 +13,7 @@ router.get("/checkauthentication", verifyToken, async function(req, res, next){
 
 router.get("/", getStudents)
 router.get("/:id", verifyUser, getStudent )
-router.put("/:id", verifyToken, updateStudent )
+router.put("/:id", verifyUser, updateStudent )
 router.delete("/:id",verifyAdmin, deleteStudent )
 
 export default router

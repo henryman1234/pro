@@ -7,6 +7,7 @@ import authRoute from "./routes/auth.js"
 import studentsRoute from "./routes/students.js"
 import cors from "cors"
 import usersRoute from "./routes/users.js"
+import emailsRoute from "./routes/email.js"
 
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(cors({
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
 app.use("/api/students", studentsRoute)
+app.use("/api/email", emailsRoute)
 
 app.use(function (err, req, res, next){
     const errorStatus = err.status || 500
@@ -36,7 +38,6 @@ app.use(function (err, req, res, next){
         stack: err.stack
     })
 })
-
 
 
 const connect = async function () {

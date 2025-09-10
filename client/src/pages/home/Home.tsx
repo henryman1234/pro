@@ -1,14 +1,18 @@
 import React, { useContext } from "react"
 import "./home.scss"
+import { AuthContext, type AuthContextType } from "../../contexts/AuthContext"
 import Header from "../../components/header/Header"
-import { AuthContext } from "../../contexts/AuthContext"
+import About from "../../components/featured/Partners"
+import Footer from "../../components/footer/Footer"
 
 const Home = function () {
-
+    const {currentUser} = useContext(AuthContext) as AuthContextType
+    console.log(currentUser)
     
     return (
         <div>
-            {/* <Header/> */}
+            <Header/>
+            <About/>
         </div>
     )
 }

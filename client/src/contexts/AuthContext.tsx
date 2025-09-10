@@ -1,19 +1,34 @@
-import React, { createContext, useEffect, useState } from "react"
+import React, { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext();
+type User = {
+    username: string,
+    email: string,
+    matricule: string,
+    updatedAt?: string,
+    created?: string
+}
 
-export const AuthContextProvider = function ({children}) {
-    const [currentUser, setCurrentUser] = useState(
-        JSON.parse(localStorage.getItem("user")) || null
-    )
+export type AuthContextType = {
+    currentUser: User | null,
+    updateUser: (user: User | null) => void
+}
+export const AuthContext = createContext<AuthContextType | null>(null)
 
-    const updateUser = function(data) {
+export const AuthContextProvider = function ({children}: {children: React.ReactNode}) {
+
+    const [currentUser, setCurrentUser] = useState<User | null>(function() {
+        const storedUser = localStorage.getItem("user")
+        return storedUser ? JSON.parse(storedUser) as User :null
+    })
+
+    const updateUser = function (data: User | null) {
         setCurrentUser(data)
     }
 
-    useEffect(function(){
+    useEffect(function() {
         localStorage.setItem("user", JSON.stringify(currentUser))
     }, [currentUser])
+
 
     return (
         <AuthContext.Provider value={{currentUser, updateUser}}>

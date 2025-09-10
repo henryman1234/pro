@@ -27,10 +27,11 @@ const Login = function () {
                 }
             });
 
-            // localStorage.setItem("user", JSON.stringify(res))
             const data = await res.json()
+            window.localStorage.setItem("user", JSON.stringify(data))
             console.log(data)
             navigate("/")
+            window.location.reload()
 
         } catch (err: any) {
             console.log(err)

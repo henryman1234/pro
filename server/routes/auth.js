@@ -50,5 +50,13 @@ router.post("/login", async function (req, res, next) {
     }
 })
 
+router.post("/logout", async function (req, res, next) {
+    try {
+        res.clearCookie("access_token").status(200).json({message: "Logout successfully"})
+    } catch (err) {
+        next(err)
+    }
+})
+
 
 export default router

@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes, useRouteError } from "react-router-dom"
 import Home from "./pages/home/Home";
-import Students from "./pages/students/Students";
-import Student from "./pages/Student/Student";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Test from "./components/Test";
 import Layout from "./pages/layout/Layout";
+import Subscribe from "./pages/suscribe/Subscribe";
 
 
 
@@ -33,6 +32,10 @@ function App () {
             {
               path: "/test",
               element: <Test/>
+            },
+            {
+              path:"/subscribe",
+              element: <Subscribe/>
             }
           ]
         }
