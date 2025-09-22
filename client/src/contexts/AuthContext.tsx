@@ -3,7 +3,9 @@ import React, { createContext, useEffect, useState } from "react";
 type User = {
     username: string,
     email: string,
-    matricule: string,
+    password: string,
+    image?: string,
+    training?: string,
     updatedAt?: string,
     created?: string
 }

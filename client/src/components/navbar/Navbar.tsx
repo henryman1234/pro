@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, type FunctionComponentElement, type SetStateAction } from "react";
 import "./navbar.scss"
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../../public/images/logo-formation.png"
 import DefaultImage from "../../../public/images/noavatar.jpg"
 import { useToggle } from "../../hooks/useToggle";
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
+
 
 const Navbar = function () {
 
@@ -51,7 +52,7 @@ const Navbar = function () {
             <div className="navbarContainer">
                 <div className="logo">
                     {/* <img src={Logo} alt="" /> */}
-                    <h2>KingTech.</h2>
+                    <Link className="link" to="/">KingTech.</Link>
                 </div>
 
                 {/* MOBILE MENU */}
@@ -73,8 +74,8 @@ const Navbar = function () {
                 {/* DESKTOP MENU */}
                 <div className="desktopMenu">
                     {currentUser ? <div className="desktopMenuItem">
-                        <Link onClick={toggle} to="/">Mon Profile</Link>
-                        <Link onClick={toggle} to="/">Blogs</Link>
+                        <Link onClick={toggle} to="/profile">Mon Profile</Link>
+                        <Link onClick={toggle} to="/trainings">Formations</Link>
                         <Link onClick={toggle} to="/">Contacts</Link>
                         <button className="logout" onClick={handleLogout}>Se déconnecter</button>
                         <span>{currentUser?.username}</span>

@@ -33,8 +33,11 @@
                 // max-width: 10%;
             }
     
-            h2 {
+            .link {
                 font-weight: bold;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
                 font-size: 25px;
             }
         }
@@ -69,7 +72,7 @@
                         padding: 4px 8px;
                         display: flex;
                         border: none;
-                        color:  rgb(1, 1, 77);
+                        color:  var(--first-blue);
                         justify-content: center;
                         align-items: center;
                         font-size: 14px;
@@ -84,7 +87,7 @@
                     border-radius: 20px;
                     padding: 5px 10px;
                     display: flex;
-                    color: rgb(1, 1, 77);
+                    color: var(--first-blue);
                     justify-content: center;
                     align-items: center;
                     font-size: 14px;

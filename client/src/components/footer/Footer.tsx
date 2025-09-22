@@ -7,6 +7,8 @@ import { faLightbulb } from "@fortawesome/free-solid-svg-icons/faLightbulb";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons/faDatabase";
 import { faMagnet } from "@fortawesome/free-solid-svg-icons/faMagnet";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons/faLocationArrow";
+import { FaFacebook, FaTwitter } from "react-icons/fa";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 const Footer = function () {
     return (
         <div className="footer">
@@ -33,13 +35,13 @@ const Footer = function () {
 
                         <div className="socials">
                             <Link to="/">
-                                <FontAwesomeIcon className="icon" icon={faGifts}/>
+                                <Facebook className="icon" />
                             </Link>
                             <Link to="/">
-                                <FontAwesomeIcon className="icon" icon={faDatabase}/>
+                                <Twitter className="icon" />
                             </Link>
                             <Link to="/">
-                                <FontAwesomeIcon className="icon" icon={faMagnet}/>
+                                <Linkedin className="icon"/>
                             </Link>
                         </div>
 

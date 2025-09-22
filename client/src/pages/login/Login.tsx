@@ -49,7 +49,7 @@ const Login = function () {
                 <div className="loginForm">
                     <div className="item">
                         <label htmlFor="username">Nom</label>
-                        <input type="text" placeholder="Ton Nom" name="username" id="username" />
+                        <input type="text" maxLength={10} placeholder="Ton Nom" name="username" id="username" />
                     </div>
 
                     <div className="item">

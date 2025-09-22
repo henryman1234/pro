@@ -1,12 +1,11 @@
 import mongoose, { Schema } from "mongoose";
-import { string } from "zod";
 
 const UserSchema =  new Schema({
     username: {
         type: String,
         unique: true,
         required: true,
-        min: 3,
+        max: 10,
     },
     email: {
         type: String,
@@ -18,27 +17,16 @@ const UserSchema =  new Schema({
         required: true,
         unique: true
     },
-    followers: {
-        type: Array,
-        default: []
+    training: {
+        type: String
     },
-    followings:  {
-        type: Array,
-        default: []
-    },
-    city: {
-        type: string,
-        required: true
-    },
-    profilePicture: {
+    image: {
         type: String,
-        default: ""
     },
-    coverPicture: {
-        type: String,
-        default: ""
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
-
 
 }, {timestamps: true})
 

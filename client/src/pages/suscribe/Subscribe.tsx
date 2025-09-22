@@ -8,7 +8,7 @@ const Subscribe = function () {
     const [error, setError] = useState(null)
     const navigate = useNavigate()
 
-    const handleSubscribe = async function (e) {
+    const handleSubscribe = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsSubmitting(true)
         setMessage("")
@@ -27,7 +27,9 @@ const Subscribe = function () {
             if (res.success) {
                 console.log("Success", res)
                 setMessage(res.message)
-            }
+                e.target?.reset()
+            } 
+              
         } catch (err: any) {
             console.log("Error")
             setError(err.message)

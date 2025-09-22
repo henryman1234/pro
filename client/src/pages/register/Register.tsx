@@ -50,11 +50,7 @@ const Register = function () {
                 <div className="loginForm">
                     <div className="item">
                         <label htmlFor="username">Nom</label>
-                        <input type="text" required min={4} placeholder="Ton Nom" name="username" id="username" />
-                    </div>
-                    <div className="item">
-                        <label htmlFor="matricule">Matricule</label>
-                        <input type="text"required placeholder="Ton Matricule" name="matricule" id="matricule" />
+                        <input type="text" required maxLength={10} placeholder="Ton Nom" name="username" id="username" />
                     </div>
                     <div className="item">
                         <label htmlFor="email">Email</label>
@@ -63,6 +59,11 @@ const Register = function () {
                     <div className="item">
                         <label htmlFor="password">Mot de passe</label>
                         <input type="text" required placeholder="Mot de passe" name="password" id="password" />
+                    </div>
+
+                    <div className="item">
+                        <label htmlFor="training">Formation</label>
+                        <input type="text" placeholder="Formation souhaité" name="training" id="training" />
                     </div>
 
                     <div className="item">

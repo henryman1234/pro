@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import express from "express"
 import { deleteStudent, getStudent, getStudents, updateStudent } from "../controllers/students.js";
-import { de } from "zod/v4/locales";
-import { verify } from "crypto";
 import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router()

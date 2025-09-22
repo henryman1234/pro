@@ -25,11 +25,10 @@ export const verifyToken = async function (req, res, next) {
 export const verifyUser = async function (req, res, next) {
     try {
         verifyToken(req, res, function(){
-            if (req.params.id === req.user.id || req.user.isDelegate) {
-                next()
+            if ( req.params.id === req.user.id || req.user.isAdmin) {
+                return next()
             } else {
                 return next(createError(402, "You are not authorized!"))
-                
             }
         })
     } catch (err) {
@@ -40,10 +39,12 @@ export const verifyUser = async function (req, res, next) {
 export const verifyAdmin = async function (req, res, next) {
     try {
         verifyToken(req, res, function () {
-            if (req.user.isDelegate) {
-                next()
+
+            if (req.user?.isAdmin) {
+                return next()
+            } else {
+                return next(createError(403, "You are not Admin!"))
             }
-            return next(createError(402, "You are not Delegate or Admin!"))
         })
     } catch (err) {
         next(err)

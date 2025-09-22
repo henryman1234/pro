@@ -8,6 +8,7 @@ import studentsRoute from "./routes/students.js"
 import cors from "cors"
 import usersRoute from "./routes/users.js"
 import emailsRoute from "./routes/email.js"
+import verifyOtpPassword from "./routes/verify-otp-password.js"
 
 
 const app = express()
@@ -27,6 +28,7 @@ app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
 app.use("/api/students", studentsRoute)
 app.use("/api/email", emailsRoute)
+app.use("/api/verify-otp-password", verifyOtpPassword)
 
 app.use(function (err, req, res, next){
     const errorStatus = err.status || 500

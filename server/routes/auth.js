@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs"
-import Student from "../models/Student.js";
 import { createError } from "../utils/error.js";
 import jwt from "jsonwebtoken"
 import dotenv from "dotenv"
+import User from "../models/User.js";
+import { verifyAdmin, verifyUser } from "../utils/verifyToken.js";
 dotenv.config()
 
 const router = express.Router()
@@ -13,15 +14,14 @@ router.post("/register", async function (req, res, next) {
     const salt = bcrypt.genSaltSync(10)
     const hashedPassword = bcrypt.hashSync(req.body.password, salt)
     try {
-        const newStudent = new Student({
+        const newUser = new User({
             username: req.body.username,
-            matricule: req.body.matricule,
             email: req.body.email,
             password: hashedPassword
 
         })
-        const savedStudent = await newStudent.save()
-        res.status(201).json({ message: "succès", data: savedStudent })
+        const savedUser = await newUser.save()
+        res.status(201).json({ message: "succès", data: savedUser })
     } catch (err) {
         next(err)
     }
@@ -29,22 +29,22 @@ router.post("/register", async function (req, res, next) {
 
 router.post("/login", async function (req, res, next) {
     try {
-        const student = await Student.findOne({ username: req.body.username })
-        if (!student) {
+        const user = await User.findOne({ username: req.body.username })
+        if (!user) {
             return next(createError(404, "Cet utilisateur n'existe pas"))
         }
-        const isPasswordCorrect = await bcrypt.compare(req.body.password, student.password)
+        const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password)
         if (!isPasswordCorrect) {
             return next(createError(400, "Mot de passe inavalide!"))
         }
 
-        const {password, isDelegate, ...othersStudentsDetails} = student._doc
+        const {password, isAdmin, ...othersUserDetails} = user._doc
 
-        const token = jwt.sign({id: student._id, isDelegate: student.isDelegate}, process.env.JWT_SECRET)
+        const token = jwt.sign({id: user._id, isAdmin: user.isAdmin}, process.env.JWT_SECRET)
         
         res.cookie("access_token", token, {
             httpOnly: true,
-        }).status(200).json({...othersStudentsDetails})
+        }).status(200).json({...othersUserDetails})
     } catch (err) {
         next(err)
     }
@@ -57,6 +57,8 @@ router.post("/logout", async function (req, res, next) {
         next(err)
     }
 })
+
+
 
 
 export default router

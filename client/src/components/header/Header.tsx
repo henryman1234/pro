@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, type SetStateAction } from "react";
 import "./header.scss"
 import Image from "../../../public/images/8.jpeg"
 import { Images } from "../../utils/data.js";
 import { Link } from "react-router-dom";
 
-const Header = function() {
+const Header = function({setShowOTPModal}: {setShowOTPModal: React.Dispatch<SetStateAction<boolean>>}) {
 
     const [currentImage, setCurrentImage] = useState(undefined)
 
@@ -25,7 +25,9 @@ const Header = function() {
 
                         <div className="buttonContainer">
                             <Link to="/subscribe" className="primary">Commencez</Link>
-                            <Link to="/subscribe" className="secondary">Voir plus</Link>
+                            <button className="secondary" onClick={function(){
+                                setShowOTPModal(true)
+                            }}>Admin</button>
                         </div>
                         <div className="headerStats">
                             <div className="statItem">
