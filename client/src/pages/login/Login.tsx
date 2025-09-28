@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import "./login.scss"
 import {Link, useNavigate} from "react-router-dom"
+import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
 
 const Login = function () {
 
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
+    const {currentUser, updateUser} = useContext(AuthContext) as AuthContextType
 
     const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -28,7 +30,7 @@ const Login = function () {
             });
 
             const data = await res.json()
-            window.localStorage.setItem("user", JSON.stringify(data))
+            updateUser(data)
             console.log(data)
             navigate("/")
             window.location.reload()

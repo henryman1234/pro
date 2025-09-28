@@ -7,8 +7,10 @@ import Test from "./components/Test";
 import Subscribe from "./pages/suscribe/Subscribe";
 import Admin from "./pages/Admin/Admin";
 import Profile from "./pages/profile/Profile";
-import { Layout, RequireAuthLayout } from "./pages/layout/Layout";
 import ProfileUpdatepage from "./pages/profileUpdatePage/ProfileUpdatePage";
+import Trainings from "./pages/trainings/Trainings";
+import { Layout, RequireAuthLayout } from "./pages/layout/Layout";
+import Contacts from "./pages/contacts/Contacts";
 
 
 
@@ -39,33 +41,47 @@ function App () {
               element: <Test/>
             },
 
-          ]
-        },
-
-        {
-          path: "/",
-          element: <RequireAuthLayout/>,
-          errorElement: <PageError/>,
-          children: [
             {
-              path:"subscribe",
-              element: <Subscribe/>
-            },
-            {
-              path: "profile",
-              element: <Profile/>
+              path: "trainings",
+              element: <Trainings/>
             },
             {
               path: "admin",
               element: <Admin/>
             },
             {
-              path: "profileUpdatePage",
-              element: <ProfileUpdatepage/>
+              path: "subscribe",
+              element: <Subscribe/>
+            },
+            {
+              path: "contacts",
+              element: <Contacts/>
             }
-            
+
+
+          ]
+        },
+
+        {
+          path: "",
+          element: <RequireAuthLayout/>,
+          children: [
+            {
+              path: "login",
+              element: <Login/>
+            },
+            {
+              path: "profile",
+              element: <Profile/>
+            },
+            {
+              path: "profileUpdatePage/:id",
+              element: <ProfileUpdatepage/>
+            },
+
           ]
         }
+
       ])
 
     return (

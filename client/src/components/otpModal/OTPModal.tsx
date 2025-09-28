@@ -10,6 +10,8 @@ import Login from "../../pages/login/Login";
 
 const OTPModal = function ({setShowOTPModal}: {setShowOTPModal: React.Dispatch<React.SetStateAction<boolean>>}) {
 
+    console.log(setShowOTPModal)
+
     const navigate = useNavigate()
     const [error, setError] = useState("")
     const [isFetching, setIsFetching] = useState(false)
@@ -24,7 +26,7 @@ const OTPModal = function ({setShowOTPModal}: {setShowOTPModal: React.Dispatch<R
     const otpLength = 5
     console.log(otp, typeof otp)
 
-    // Gère la saisie des chiffre 
+    // Gère la saisie des chiffres 
     const handleChange = function (e: React.ChangeEvent<HTMLInputElement>, index: number) {
 
         const value = e.target.value
@@ -32,7 +34,7 @@ const OTPModal = function ({setShowOTPModal}: {setShowOTPModal: React.Dispatch<R
             return
         }
 
-        const newOTP = otp.split("")
+        const newOTP = otp.split("") 
         newOTP[index] = value
         setOTP(newOTP.join(""))
 

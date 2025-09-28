@@ -17,6 +17,7 @@ const Register = function () {
         const matricule = formData.get("matricule")
         const email = formData.get("email")
         const password = formData.get("password")
+        const training = formData.get("training")
         setError("")
         setIsLoading(true)
 
@@ -24,7 +25,7 @@ const Register = function () {
             const res = await fetch("http://localhost:8800/api/auth/register", {
                 method: "POST",
                 credentials: "include",
-                body: JSON.stringify({username, matricule, email, password}),
+                body: JSON.stringify({username, matricule, email,training, password}),
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",

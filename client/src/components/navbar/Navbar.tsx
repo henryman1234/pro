@@ -1,18 +1,21 @@
-import React, { useContext, useEffect, useState, type FunctionComponentElement, type SetStateAction } from "react";
+import React, { useContext, useEffect, useState,type SetStateAction } from "react";
 import "./navbar.scss"
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Logo from "../../../public/images/logo-formation.png"
 import DefaultImage from "../../../public/images/noavatar.jpg"
 import { useToggle } from "../../hooks/useToggle";
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
 
 
-const Navbar = function () {
+interface OTPSetterType {
+    setShowOTPModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Navbar = function ({setShowOTPModal}: OTPSetterType) {
 
     const [isNavbarOpen, setIsNavbarOpen] = useState(false)
     const [toggleDropDown, setToggleDropDown] = useState(false)
     let isUserLoggedIn = true
-    const {currentUser} = useContext(AuthContext) as AuthContextType
+    const {currentUser, updateUser} = useContext(AuthContext) as AuthContextType
     const navigate = useNavigate()
 
     useEffect(function() {
@@ -25,6 +28,7 @@ const Navbar = function () {
     }, [isNavbarOpen])
 
     const [state, toggle] = useToggle(false)
+    
     const handleLogout = async function () {
         try {
             const res = await fetch("http://localhost:8800/api/auth/logout", {
@@ -37,7 +41,8 @@ const Navbar = function () {
             })
             const data = await res.json()
             console.log(data)
-            window.localStorage.removeItem("user")
+            // window.localStorage.removeItem("user")
+            updateUser(null)
             window.location.reload()
             navigate("/")
 
@@ -61,7 +66,7 @@ const Navbar = function () {
                         <img onClick={toggle} src={DefaultImage} alt="Logo" className="mobileImage" />
                         
                         {state && <div className="mobileDrop">
-                            <Link onClick={toggle} to="/">Mon Profile</Link>
+                            <Link onClick={toggle} to="/profile">Mon Profile</Link>
                             <Link onClick={toggle} to="/">Blogs</Link>
                             <Link onClick={toggle} to="/">Contacts</Link>
                             <button className="logout" onClick={handleLogout}>Se déconnecter</button>
@@ -69,18 +74,23 @@ const Navbar = function () {
                      </div>: <Link to="/login" className="connect">Se Connecter</Link>}
                 </div>
 
-
-
                 {/* DESKTOP MENU */}
                 <div className="desktopMenu">
                     {currentUser ? <div className="desktopMenuItem">
-                        <Link onClick={toggle} to="/profile">Mon Profile</Link>
-                        <Link onClick={toggle} to="/trainings">Formations</Link>
-                        <Link onClick={toggle} to="/">Contacts</Link>
+                        <Link   to="/profile">Mon Profile</Link>
+                        <Link  to="/contacts">Contacts</Link>
                         <button className="logout" onClick={handleLogout}>Se déconnecter</button>
-                        <span>{currentUser?.username}</span>
-                        <img onClick={toggle} src={DefaultImage} alt="Logo" className="desktopImage" />
-                    </div> : <Link to="/login" className="connect">Se connecter</Link>}
+                        <button className="logout-secondary" onClick={function () {
+                            setShowOTPModal(true)
+                        }}>Admin</button>
+
+                        <span style={{fontWeight: "bold", cursor: "pointer"}}>{currentUser?.username}</span>
+                        
+                        <img  src={DefaultImage} alt="Logo" className="desktopImage" />
+                    </div> : <div className="not-loggedIn">
+                            <Link to= "/contacts" className="contact">Contacts</Link>
+                            <Link to="/login" className="connect">Se connecter</Link>
+                        </div>}
                 </div>
             </div>
 

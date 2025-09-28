@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 
 type User = {
     username: string,
+    _v?:number,
+    _id: string,
     email: string,
     password: string,
     image?: string,

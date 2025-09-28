@@ -22,8 +22,8 @@ const Home = function () {
 
     return (
         <div>
-            {showOTPModal ? <OTPModal setShowOTPModal={setShowOTPModal}/> : <></>}
-            <Header setShowOTPModal = {setShowOTPModal}  />
+           
+            <Header  />
             <About/>
             <Accordion items = {items}/>
         </div>

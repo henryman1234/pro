@@ -4,7 +4,7 @@ import Image from "../../../public/images/8.jpeg"
 import { Images } from "../../utils/data.js";
 import { Link } from "react-router-dom";
 
-const Header = function({setShowOTPModal}: {setShowOTPModal: React.Dispatch<SetStateAction<boolean>>}) {
+const Header = function () {
 
     const [currentImage, setCurrentImage] = useState(undefined)
 
@@ -25,9 +25,7 @@ const Header = function({setShowOTPModal}: {setShowOTPModal: React.Dispatch<SetS
 
                         <div className="buttonContainer">
                             <Link to="/subscribe" className="primary">Commencez</Link>
-                            <button className="secondary" onClick={function(){
-                                setShowOTPModal(true)
-                            }}>Admin</button>
+                            <Link to="/trainings" className="secondary">Les Formations</Link>
                         </div>
                         <div className="headerStats">
                             <div className="statItem">

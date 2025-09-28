@@ -18,7 +18,8 @@ const UserSchema =  new Schema({
         unique: true
     },
     training: {
-        type: String
+        type: String,
+        required: true
     },
     image: {
         type: String,

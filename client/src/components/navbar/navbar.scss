@@ -13,6 +13,7 @@
     background-color: var(--first-blue);
     align-items: center;
     height: 60px;
+    z-index: 999;
 
     .navbarContainer {
         max-width: 1024px;
@@ -80,20 +81,58 @@
                         background-color: #fff;
                     }
 
+                    .logout-secondary {
+                        border:  1px solid #fff;
+                        outline: none;
+                        padding: 4px 8px;
+                        font-size: 14px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: transparent;
+                        color: #fff;
+                        border-radius: 20px;
+                        cursor: pointer;
+
+                    }
+
                 }
 
-                .connect {
-                    border: none;
-                    border-radius: 20px;
-                    padding: 5px 10px;
+                .not-loggedIn {
                     display: flex;
-                    color: var(--first-blue);
-                    justify-content: center;
                     align-items: center;
-                    font-size: 14px;
-                    outline: none;
-                    text-decoration: none;
-                    background-color: #fff;
+                    gap: 20px;
+                    flex-direction: row;
+
+                    .connect {
+                        border: none;
+                        border-radius: 20px;
+                        padding: 5px 10px;
+                        display: flex;
+                        color: var(--first-blue);
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 14px;
+                        outline: none;
+                        text-decoration: none;
+                        background-color: #fff;
+                        transition: 0.3s ease-in-out;
+                    }
+
+                    .contact {
+                        border: none;
+                        border-radius: 20px;
+                        padding: 5px 10px;
+                        display: flex;
+                        color: var(--first-blue);
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 14px;
+                        outline: none;
+                        text-decoration: none;
+                        background-color: #fff;
+                        transition: 0.3s ease-in-out; 
+                    }
                 }
 
             }
@@ -171,7 +210,7 @@
                         }
 
                     }
-    
+
                 }
             }
 

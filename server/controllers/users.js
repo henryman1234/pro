@@ -18,7 +18,7 @@ export const getUser = async function (req, res, next) {
     } catch (err) {
         next(err)
     }
-}
+ }
 
 export const updateUser = async function (req, res, next) {
     const id = req.params.id

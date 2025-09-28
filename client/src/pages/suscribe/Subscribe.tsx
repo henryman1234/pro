@@ -13,7 +13,7 @@ const Subscribe = function () {
         setIsSubmitting(true)
         setMessage("")
 
-        const formdata = new FormData(e.target)
+        const formdata = new FormData(e.currentTarget)
         formdata.append("access_key","c24d19bf-2212-4713-a192-14449f77c8ef")
 
         try {
@@ -27,7 +27,7 @@ const Subscribe = function () {
             if (res.success) {
                 console.log("Success", res)
                 setMessage(res.message)
-                e.target?.reset()
+                e.currentTarget?.reset()
             } 
               
         } catch (err: any) {

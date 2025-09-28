@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./profile.scss";
 import Avatar from "../../../public/images/noavatar.jpg"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
 
 const Profile = function () {
@@ -21,6 +21,7 @@ const Profile = function () {
             return  {...prev, [name]: value }
         })
     }
+
 
     return (
         <div className="profile">
@@ -61,7 +62,7 @@ const Profile = function () {
                         </div>
 
                         <div className="formItem">
-                            <Link className="update" to="/profileUpdatePage" >Modifier</Link>
+                            <Link className="update" to={`/profileUpdatePage/${currentUser?._id}`} >Modifier</Link>
                         </div>
 
                     </form>

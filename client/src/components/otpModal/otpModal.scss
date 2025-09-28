@@ -6,11 +6,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position:  fixed;
+    top: 0;
+    left: 0;
     min-width: 100vw;
-    min-height: 100Vh;
+    min-height: 100vh;
     background-color: #00000090;
-    z-index: 1;
+    z-index: 10000;
 
     .otpModalContainer {
         display: flex;
