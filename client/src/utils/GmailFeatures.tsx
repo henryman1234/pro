@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+ { useEffect, useState } from "react";
 
 const initialEmails =  [
     {id: 1, title: "Apprendre le code", body: "React est un framework JS"},

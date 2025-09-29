@@ -1,4 +1,4 @@
-import React, { useState, type FormEvent } from "react";
+import  React, { useState, type FormEvent } from "react";
 import "./register.scss"
 import {Link, useNavigate} from "react-router-dom"
 
@@ -10,9 +10,9 @@ const Register = function () {
     const navigate = useNavigate()
 
 
-    const handleSubmit = async function (e) {
+    const handleSubmit = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        const formData = new FormData(e.target)
+        const formData = new FormData(e.currentTarget)
         const username = formData.get("username")
         const matricule = formData.get("matricule")
         const email = formData.get("email")

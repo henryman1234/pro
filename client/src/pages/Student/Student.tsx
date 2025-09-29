@@ -1,4 +1,3 @@
-import React from "react";
 import "./student.scss"
 
 const Student = function () {

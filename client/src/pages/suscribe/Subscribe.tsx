@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import "./subscribe.scss";
-import { useNavigate } from "react-router-dom";
 
 const Subscribe = function () {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [message, setMessage] = useState("")
     const [error, setError] = useState(null)
-    const navigate = useNavigate()
 
     const handleSubscribe = async function (e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
