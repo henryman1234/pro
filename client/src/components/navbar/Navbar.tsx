@@ -69,6 +69,9 @@ const Navbar = function ({setShowOTPModal}: OTPSetterType) {
                             <Link onClick={toggle} to="/profile">Mon Profile</Link>
                             <Link onClick={toggle} to="/">Blogs</Link>
                             <Link onClick={toggle} to="/">Contacts</Link>
+                            <button className="logout" onClick={function () {
+                            setShowOTPModal(true)
+                        }}>Admin</button>
                             <button className="logout" onClick={handleLogout}>Se déconnecter</button>
                         </div>}
                      </div>: <Link to="/login" className="connect">Se Connecter</Link>}

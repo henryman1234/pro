@@ -45,6 +45,7 @@ router.post("/login", async function (req, res, next) {
         
         res.cookie("access_token", token, {
             httpOnly: true,
+            maxAge: new Date(Date.now() + 999999999999)
         }).status(200).json({...othersUserDetails})
     } catch (err) {
         next(err)

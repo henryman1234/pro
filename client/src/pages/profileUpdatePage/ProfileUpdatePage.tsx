@@ -44,7 +44,7 @@ const ProfileUpdatePage = function () {
         }
 
         fetchUser()
-    }, [id])
+    }, [])
 
     // Change the inputs
     const handleChange = function (e: React.ChangeEvent<HTMLInputElement>) {
