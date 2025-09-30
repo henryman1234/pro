@@ -18,11 +18,10 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: "*"
+    origin: "https://kingtech-front.onrender.com/"
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204,
-    allowedHeaders: ["Content-Type", "Authorization"],
 }))
 
 app.use("/api/auth", authRoute)
