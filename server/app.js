@@ -14,8 +14,7 @@ import verifyOtpPassword from "./routes/verify-otp-password.js"
 const app = express()
 
 // Middlewares  
-app.use(express.json())
-app.use(cookieParser())
+
 
 app.use(cors({
     origin: "https://kingtech-front.onrender.com/"
@@ -23,6 +22,9 @@ app.use(cors({
     credentials: true,
     optionsSuccessStatus: 204,
 }))
+
+app.use(express.json())
+app.use(cookieParser())
 
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
