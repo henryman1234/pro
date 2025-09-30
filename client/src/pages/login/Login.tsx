@@ -19,7 +19,7 @@ const Login = function () {
         setIsLoading(true)
 
         try {
-            const res = await fetch("http://localhost:8800/api/auth/login", {
+            const res = await fetch("https://kingtech-back.onrender.com/api/auth/login", {
                 method: "POST",
                 body: JSON.stringify({username, password}),
                 credentials: "include",
