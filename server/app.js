@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: process.env.PUBLIC_URL,
+    origin: process.env.PUBLIC_URL || "*",
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204
@@ -68,7 +68,10 @@ app.get("/users", function(req, res) {
 })
 
 
-app.listen(8800, function () {
+const PORT = process.env.PORT || 5000;
+
+
+app.listen(PORT, function () {
     connect()
     console.log("Serveur en écoute sur le port 8800")
 })
