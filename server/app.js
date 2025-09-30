@@ -16,17 +16,18 @@ const app = express()
 // Middlewares  
 
 
+
+
+
+app.use(express.json())
+app.use(cookieParser())
+
 app.use(cors({
-    origin: "https://kingtech-front.onrender.com/",
+    origin: "https://kingtech-front.onrender.com",
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204,
 }))
-
-app.options("https://kingtech-front.onrender.com/", cors());
-
-app.use(express.json())
-app.use(cookieParser())
 
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
