@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: "https://kingtech-front.onrender.com",
+    origin: process.env.PUBLIC_URL || "https://kingtech-back.onrender.com",
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204,
