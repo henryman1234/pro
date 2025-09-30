@@ -17,7 +17,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: "https://kingtech-front.onrender.com/"
+    origin: "https://kingtech-front.onrender.com/",
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204,
