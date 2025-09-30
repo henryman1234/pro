@@ -3,7 +3,6 @@ import { RouterProvider,createBrowserRouter, useRouteError } from "react-router-
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
-import Test from "./components/Test";
 import Subscribe from "./pages/suscribe/Subscribe";
 import Admin from "./pages/Admin/Admin";
 import Profile from "./pages/profile/Profile";

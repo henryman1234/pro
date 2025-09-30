@@ -1,4 +1,4 @@
-export const Images = [
+export const Images: {src: string}[] = [
     {
         src: "/images/2.jpeg"
     },
