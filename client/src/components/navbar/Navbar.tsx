@@ -31,7 +31,7 @@ const Navbar = function ({setShowOTPModal}: OTPSetterType) {
     
     const handleLogout = async function () {
         try {
-            const res = await fetch("http://localhost:8800/api/auth/logout", {
+            const res = await fetch("https://kingtech-back.onrender.com/api/auth/logout", {
                 method: "POST",
                 credentials: "include",
                 headers: {
