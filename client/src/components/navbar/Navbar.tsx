@@ -13,8 +13,8 @@ interface OTPSetterType {
 const Navbar = function ({setShowOTPModal}: OTPSetterType) {
 
     const [isNavbarOpen, setIsNavbarOpen] = useState(false)
-    const [toggleDropDown, setToggleDropDown] = useState(false)
-    let isUserLoggedIn = true
+    // const [toggleDropDown, setToggleDropDown] = useState(false)
+    // let isUserLoggedIn = true
     const {currentUser, updateUser} = useContext(AuthContext) as AuthContextType
     const navigate = useNavigate()
 

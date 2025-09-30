@@ -1,13 +1,9 @@
-import React from "react";
 import "./footer.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import { faGifts, faLocation, faMessage, faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import {faMessage } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { faLightbulb } from "@fortawesome/free-solid-svg-icons/faLightbulb";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons/faDatabase";
-import { faMagnet } from "@fortawesome/free-solid-svg-icons/faMagnet";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons/faLocationArrow";
-import { FaFacebook, FaTwitter } from "react-icons/fa";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 const Footer = function () {
     return (

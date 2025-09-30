@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes, useRouteError } from "react-router-dom"
+import  { useState } from "react";
+import { createBrowserRouter, useRouteError } from "react-router-dom"
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";

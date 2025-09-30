@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useRef, useState, type ChangeEvent } from "react";
+import React, { useContext, useEffect, useRef, useState} from "react";
 import "./otpModal.scss";
 import { Navigate, useNavigate } from "react-router-dom";
-import {FaBeer, FaCross, FaMaxcdn, FaXbox} from "react-icons/fa"
-import {Activity, BarChart, ChevronsUpIcon, Cross, CrossIcon, LucideAirplay, LucideCross} from "lucide-react"
+import {LucideCross} from "lucide-react"
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";
 import Login from "../../pages/login/Login";
 

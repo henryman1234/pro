@@ -1,9 +1,7 @@
-import React from "react";
 import "./partners.scss";
-import { Link } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import Logos from "../../../public/images/all.jpg"
-import { faCheck, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import {  faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 const About = function () {

@@ -1,4 +1,4 @@
-import React, { useState, type SetStateAction } from "react";
+import { useState } from "react";
 import "./header.scss"
 import Image from "../../../public/images/8.jpeg"
 import { Images } from "../../utils/data.js";

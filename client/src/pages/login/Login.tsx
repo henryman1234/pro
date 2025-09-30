@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import "./login.scss"
 import {Link, useNavigate} from "react-router-dom"
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext";

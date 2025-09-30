@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import{ useContext, useState } from "react";
 import "./profile.scss";
 import Avatar from "../../../public/images/noavatar.jpg"
 import { Link, useParams } from "react-router-dom";

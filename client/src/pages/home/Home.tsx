@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import { useContext, useState } from "react"
 import "./home.scss"
 import { AuthContext, type AuthContextType } from "../../contexts/AuthContext"
 import Header from "../../components/header/Header"

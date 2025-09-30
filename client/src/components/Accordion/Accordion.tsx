@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from "react";
+import  { useState, type JSX } from "react";
 import "./accordion.scss";
 import AccordionItem from "../accordionItem/AccordionItem";
 

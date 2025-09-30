@@ -1,9 +1,8 @@
 import React from "react";
 import "./accordionItem.scss";
-import { useState, useRef } from "react";
-import { ArrowBigDownDash, ArrowBigDownIcon, ArrowDown, ArrowDown01, ArrowDownCircleIcon, ArrowDownIcon, ArrowDownToDotIcon } from "lucide-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleDown, faArrowDown, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { useRef } from "react";
+import {ArrowDownCircleIcon } from "lucide-react";
+
 
 interface AccordionItemType {
     index: number,
@@ -12,9 +11,7 @@ interface AccordionItemType {
     handleToggle : (arg: number) => void
 }
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
-}
 
 const AccordionItem = function ({active, index, item, handleToggle}: AccordionItemType) {
 
