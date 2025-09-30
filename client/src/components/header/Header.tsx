@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Header = function () {
 
-    const [currentImage, setCurrentImage] = useState(undefined)
+    const [currentImage, setCurrentImage] = useState("")
 
     const handleDefine = function (index: number) {
         let newImage;
