@@ -23,7 +23,7 @@ app.use(cors({
     optionsSuccessStatus: 204,
 }))
 
-app.options("*", cors());
+app.options("https://kingtech-front.onrender.com/", cors());
 
 app.use(express.json())
 app.use(cookieParser())
