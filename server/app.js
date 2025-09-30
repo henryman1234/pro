@@ -21,7 +21,8 @@ app.use(cors({
     origin: process.env.PUBLIC_URL || "*",
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
-    optionsSuccessStatus: 204
+    optionsSuccessStatus: 204,
+    allowedHeaders: ["Content-Type", "Authorization"],
 }))
 
 app.use("/api/auth", authRoute)

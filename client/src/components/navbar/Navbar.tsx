@@ -28,10 +28,12 @@ const Navbar = function ({setShowOTPModal}: OTPSetterType) {
     }, [isNavbarOpen])
 
     const [state, toggle] = useToggle(false)
+    const apiUrl = import.meta.env.VITE_API_URL;
+
     
     const handleLogout = async function () {
         try {
-            const res = await fetch("https://kingtech-back.onrender.com/api/auth/logout", {
+            const res = await fetch( `${apiUrl}/api/auth/logout`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

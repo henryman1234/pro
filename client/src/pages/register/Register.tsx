@@ -21,8 +21,12 @@ const Register = function () {
         setError("")
         setIsLoading(true)
 
+        const apiUrl = import.meta.env.VITE_API_URL;
+        console.log(apiUrl)
+    
+
         try {
-            const res = await fetch("https://kingtech-back.onrender.com/api/auth/register", {
+            const res = await fetch(`${apiUrl}/api/auth/register` , {
                 method: "POST",
                 credentials: "include",
                 body: JSON.stringify({username, matricule, email,training, password}),

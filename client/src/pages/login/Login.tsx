@@ -18,8 +18,11 @@ const Login = function () {
         setError("")
         setIsLoading(true)
 
+        const apiUrl = import.meta.env.VITE_API_URL;
+
+
         try {
-            const res = await fetch("https://kingtech-back.onrender.com/api/auth/login", {
+            const res = await fetch(`${apiUrl}/api/auth/login`, {
                 method: "POST",
                 body: JSON.stringify({username, password}),
                 credentials: "include",
