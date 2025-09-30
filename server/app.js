@@ -16,9 +16,9 @@ const app = express()
 // Middlewares  
 app.use(express.json())
 app.use(cookieParser())
-
+const url = "https://kingtech-front.onrender.com/"
 app.use(cors({
-    origin: process.env.PUBLIC_URL || "*",
+    origin: url,
     methods:"GET, PUT, DELETE, POST, PATCH",
     credentials: true,
     optionsSuccessStatus: 204,
