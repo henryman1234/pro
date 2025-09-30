@@ -22,7 +22,7 @@ const Register = function () {
         setIsLoading(true)
 
         try {
-            const res = await fetch("http://localhost:8800/api/auth/register", {
+            const res = await fetch("https://kingtech-back.onrender.com/api/auth/register", {
                 method: "POST",
                 credentials: "include",
                 body: JSON.stringify({username, matricule, email,training, password}),

@@ -29,7 +29,7 @@ const ProfileUpdatePage = function () {
     // Find the current user from the API
     useEffect(function() {
         const fetchUser  = async function () {
-            const res = await fetch(`http://localhost:8800/api/users/${id}`, {
+            const res = await fetch(`https://kingtech-back.onrender.com/api/users/${id}`, {
                 method: "GET",
                 credentials: "include",
                 headers: {
@@ -70,7 +70,7 @@ const ProfileUpdatePage = function () {
 
 
         try {
-            const  res = await fetch(`http://localhost:8800/api/users/${id}`, {
+            const  res = await fetch(`https://kingtech-back.onrender.com/api/users/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
