@@ -86,7 +86,7 @@ const OTPModal = function ({setShowOTPModal}: {setShowOTPModal: React.Dispatch<R
         setIsFetching(true)
         
         try {
-            const res = await fetch("http://localhost:8800/api/verify-otp-password", {
+            const res = await fetch("https://kingtech-back.onrender.com/api/verify-otp-password", {
                 method: "POST",
                 credentials: "include",
                 headers: {
